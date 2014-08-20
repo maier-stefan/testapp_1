@@ -1,0 +1,63 @@
+@stage-control-size: 80px;
+
+.stage-control {
+
+  display: block;
+  width: @stage-control-size;
+  height: @stage-control-size;
+
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 64px;
+  }
+
+}
+
+.carousel {
+
+  .stage-control {
+
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+
+      position: absolute;
+      top: 50%;
+      display: block;
+      margin: -1 * (@stage-control-size / 2) 0 0 0;
+
+    }
+
+    &.left {
+
+      left: 2%;
+
+    }
+
+    &.right {
+
+      right: 2%;
+
+    }
+
+  }
+
+}
+
+
+
+
+
+.visible-xs {
+  @media (max-width: $screen-xs-max) {
+    .responsive-visibility();
+  }
+}
+.visible-sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .responsive-visibility();
+  }
+}
